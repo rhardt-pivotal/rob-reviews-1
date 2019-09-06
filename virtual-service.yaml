@@ -21,6 +21,13 @@ spec:
     route:
     - destination:
         host: reviews-v2.cf-workloads.svc.cluster.local            
+  - match:
+    - headers:
+        end-user:
+          exact: vinesh
+    route:
+    - destination:
+        host: pbs-reviews-svc.default.svc.cluster.local  
   - route:
     - destination:
         host: reviews.cf-workloads.svc.cluster.local 

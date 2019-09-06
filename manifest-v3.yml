@@ -7,8 +7,8 @@ applications:
   env:
     ENABLE_RATINGS: true
     SERVICES_DOMAIN: cf-workloads.svc.cluster.local
-    REVIEW_TEXT_1: "It's Rainbows!!"
-    REVIEW_TEXT_2: "... and Unicorns!!!"
-    STAR_COLOR: "rainbow"
+    REVIEW_TEXT_1: "This is version 3"
+    REVIEW_TEXT_2: "Look at me"
+    STAR_COLOR: "yellow"
 
 

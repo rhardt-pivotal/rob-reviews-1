@@ -1,24 +1,34 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: node-sample-deployment
+  name: rob-reviews-pbs
   labels:
-    app: node-sample
+    app: rob-reviews-pbs
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: node-sample
+      app: rob-reviews-pbs
   template:
     metadata:
       labels:
-        app: node-sample
+        app: rob-reviews-pbs
     spec:
       containers:
       - name: main
-        image: harbor.ingress.k8s.labs.local/pbs/node-image:latest
+        image: harbor.ingress.k8s.labs.local/pbs/rob-reviews:latest
         ports:
         - containerPort: 8080
         env:
         - name: PORT
           value: "8080"
+        - name: ENABLE_RATINGS
+          value: "true"
+        - name: SERVICES_DOMAIN
+          value: cf-workloads.svc.cluster.local
+        - name: REVIEW_TEXT_1
+          value: "This review brought to you by..."
+        - name: REVIEW_TEXT_2
+          value: "Unicorns, Rainbows, and PBS!!!"
+        - name: STAR_COLOR
+          value: "rainbow"
